@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base Layer ─────────────────────────────────────────── */
+
+@layer base {
+  html {
+    @apply scroll-smooth antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+  }
+
+  ::selection {
+    @apply bg-waifu-500/30 text-white;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gray-300 hover:bg-gray-400 dark:bg-gray-700/50 dark:hover:bg-gray-600/50;
+  }
+
+  .typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+}
+
+/* ── Components Layer ───────────────────────────────────── */
+
+@layer components {
+  .chat-bubble-user {
+    @apply ml-auto max-w-[80%] rounded-2xl rounded-br-sm bg-waifu-500 px-4 py-2.5 text-sm text-white shadow-md;
+  }
+
+  .chat-bubble-assistant {
+    @apply mr-auto max-w-[80%] rounded-2xl rounded-bl-sm bg-white px-4 py-2.5 text-sm text-gray-800 shadow-md dark:bg-gray-800 dark:text-gray-100;
+  }
+
+  .chat-bubble-system {
+    @apply mx-auto max-w-[90%] rounded-xl bg-ocean-50 px-4 py-2 text-xs text-ocean-700 italic dark:bg-ocean-900/40 dark:text-ocean-300;
+  }
+
+  .avatar-ring {
+    @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-waifu-100 text-sm font-semibold text-waifu-600 ring-2 ring-waifu-300 dark:bg-waifu-500/20 dark:text-waifu-300 dark:ring-waifu-500/30;
+  }
+
+  .avatar-ring-user {
+    @apply flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-love-100 text-sm font-semibold text-love-600 ring-2 ring-love-300 dark:bg-love-500/20 dark:text-love-300 dark:ring-love-500/30;
+  }
+
+  .chat-input {
+    @apply w-full rounded-2xl border border-gray-300 bg-white px-5 py-3 text-sm text-gray-900 placeholder-gray-400 outline-none backdrop-blur-sm transition-all duration-200 focus:border-waifu-500 focus:ring-2 focus:ring-waifu-500/20 dark:border-gray-700 dark:bg-gray-800/80 dark:text-gray-100 dark:placeholder-gray-500;
+  }
+
+  .sidebar-item {
+    @apply flex cursor-pointer items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-gray-600 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800/60 dark:hover:text-gray-200;
+  }
+
+  .sidebar-item-active {
+    @apply sidebar-item bg-waifu-100 text-waifu-700 hover:bg-waifu-200 dark:bg-waifu-600/20 dark:text-waifu-300 dark:hover:bg-waifu-600/30 dark:hover:text-waifu-200;
+  }
+}
+
+/* ── Utilities Layer ────────────────────────────────────── */
+
+@layer utilities {
+  .typing-dot {
+    @apply inline-block h-2 w-2 animate-typing rounded-full bg-gray-400;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-waifu-400 via-love-400 to-ocean-400 bg-clip-text text-transparent;
+  }
+
+  .glow-waifu {
+    box-shadow: 0 0 20px theme("colors.waifu.500 / 15%"),
+      0 0 60px theme("colors.waifu.500 / 8%");
+  }
+
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+}
