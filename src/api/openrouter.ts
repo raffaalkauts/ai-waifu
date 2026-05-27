@@ -3,7 +3,8 @@ import { trackTokenUsage } from "../utils/tokenTracking";
 
 /* ── Constants ──────────────────────────────────────────── */
 
-const MODEL = "meta-llama/llama-3.1-8b-instruct:free";
+const MODEL =
+  import.meta.env.VITE_OPENROUTER_MODEL || "meta-llama/llama-3.1-8b-instruct:free";
 
 /* Use Vite proxy in dev to avoid CORS */
 const BASE = import.meta.env.DEV
