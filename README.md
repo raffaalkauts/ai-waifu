@@ -48,16 +48,16 @@ cp .env.example .env.local
    VITE_OPENROUTER_API_KEY=sk-or-v1-your-key-here
    ```
 
-The free `meta-llama/llama-3.1-8b-instruct` model is configured by default. To change the model, set `VITE_OPENROUTER_MODEL` in `.env.local`. Browse all models at [openrouter.ai/models](https://openrouter.ai/models).
+The default model is `google/gemma-4-31b-it:free`. To change the model, set `VITE_OPENROUTER_MODEL` in `.env.local`. Browse all models at [openrouter.ai/models](https://openrouter.ai/models).
 
-Other popular free models:
+Popular free models (2026):
 
 | Model | Notes |
 |---|---|
-| `meta-llama/llama-3.1-8b-instruct:free` | Default — good all-rounder |
-| `google/gemma-2-9b-it:free` | Lightweight, fast |
-| `mistralai/mistral-7b-instruct:free` | Strong reasoning |
-| `cognitivecomputations/dolphin-mixtral-8x7b:free` | Creative responses |
+| `google/gemma-4-31b-it:free` | **Default** — 31B, strong all-rounder, 256K context |
+| `google/gemma-4-26b-a4b-it:free` | 26B MoE, multimodal (text+image), lightweight |
+| `deepseek/deepseek-r1:free` | Reasoning, math, coding — GPT-4 class |
+| `meta-llama/llama-4-maverick:free` | 1M context, vision support |
 
 ### Run in Development
 
@@ -139,7 +139,7 @@ gh repo create ai-waifu --public --push
    |---|---|
    | `VITE_OPENROUTER_API_KEY` | `sk-or-v1-...` (your key) |
    | `VITE_OPENROUTER_BASE_URL` | `https://openrouter.ai/api/v1` |
-   | `VITE_OPENROUTER_MODEL` | `meta-llama/llama-3.1-8b-instruct:free` (optional) |
+   | `VITE_OPENROUTER_MODEL` | `google/gemma-4-31b-it:free` (optional) |
 
 6. Click **Deploy** — Vercel auto-detects Vite and uses the correct build command (`npm run build`) and output directory (`dist`)
 7. Once deployed, Vercel gives you a URL like `https://ai-waifu.vercel.app`
