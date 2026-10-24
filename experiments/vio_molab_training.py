@@ -711,11 +711,12 @@ def _(chat_input, mo, training_result):
                 eos_token_id=tok.eos_token_id,
             )
         answer = tok.decode(generated[0, ids.shape[-1]:], skip_special_tokens=True).strip()
-        mo.md("### Vio\n\n" + (answer if answer else "_Model returned an empty response._"))
+        response_view = mo.md("### Vio\n\n" + (answer if answer else "_Model returned an empty response._"))
     elif training_result is None:
-        mo.md("*Train the adapter first, then submit a test message.*")
+        response_view = mo.md("*Train the adapter first, then submit a test message.*")
     else:
-        mo.md("*Type a message and submit it to test the model.*")
+        response_view = mo.md("*Type a message and submit it to test the model.*")
+    response_view
     return
 
 
